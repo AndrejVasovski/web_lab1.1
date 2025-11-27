@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>List of Dishes</title>
+    <style>
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        a.button {
+            padding: 5px 10px;
+            background-color: #2196F3;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        a.button.delete {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+<form th:action="@{'/dishes/edit/' + ${dish.id}}" method="post">
+    <input type="text" name="dishId" th:value="${dish.dishId}" required />
+    <input type="text" name="name" th:value="${dish.name}" required />
+    <input type="text" name="cuisine" th:value="${dish.cuisine}" required />
+    <input type="number" name="preparationTime" th:value="${dish.preparationTime}" required />
+    <button type="submit">Save</button>
+</form>
+
+</body>
+</html>

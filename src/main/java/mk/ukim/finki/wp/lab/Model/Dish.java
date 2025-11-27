@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 
 public class Dish {
+    private Long id;
     private String dishId;
     private String name;
     private String cuisine;
@@ -16,6 +17,10 @@ public class Dish {
         this.name = name;
         this.cuisine = cuisine;
         this.preparationTime = preparationTime;
+
+    }
+
+    public Dish() {
 
     }
 }
